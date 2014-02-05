@@ -44,7 +44,7 @@ $app->get('/test', function () {
         $stmt = $db->query($sql);
         $data = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        echo '{"data": ' . json_encode($data) . '}';
+        echo '{"JSON_CALLBACK": ' . json_encode($data) . '}';
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
