@@ -14,11 +14,7 @@
       </select>
       <input type="text" ng-model="url" size="80"/>
       <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
-      <button id="samplejsonpbtn"
-        ng-click="updateModel('JSONP',
-                      'http://sonyainc.net/json/get_todo_data.php?callback=JSON_CALLBACK&name=Super%20Hero')">
-        Sample JSONP
-      </button>
+     
       <pre>http status code: {{status}}</pre>
       <pre>http response data: {{data}}</pre>
       
