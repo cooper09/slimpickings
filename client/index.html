@@ -9,20 +9,34 @@
   <body>
     <div ng-controller="FetchCtrl">
       <select ng-model="method">
-        <option>GET</option>
+      
+      <h3>New Tasks</h3>
+      <input type="text" ng-model="url" size="80"/>
+      <p></p>
+       <option>ADD</option>
         <option>JSONP</option>
       </select>
-      <input type="text" ng-model="url" size="80"/>
-      <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
      
       <pre>http status code: {{status}}</pre>
       <pre>http response data: {{data}}</pre>
-      
-         <li ng-repeat="task in data">
-                  
-                    <span>task: {{task}}</span>
-                </li>
 
+      <h3>Current Tasks:</h3> <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
+        <li ng-repeat="task in data">  
+            <span> <a href="" ng-click="cancel()">task: {{task.task}}</a></span>
+        </li>
+       
+    <p></p>
+        <button id="fetchbtn" ng-click="clear()">clear</button><br>
+
+
+         <p></p>
+         
+  <li ng-repeat="task in data"> 
+    Clear: <input type="checkbox" ng-model="checked" ng-init="checked=true" /><br/>
+    <span ng-if="checked" class="animate-if">
+        <span> <a href="" ng-click="cancel()">task: {{task.task}}</a></span>
+    </span>
+     </li>
     </div>
   </body>
 </html>
